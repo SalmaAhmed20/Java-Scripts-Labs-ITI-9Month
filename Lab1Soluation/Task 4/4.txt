@@ -1,0 +1,21 @@
+
+
+4.2- receive number from user then display it with different locals 
+
+-------------------------------
+4.3- var arr = [10.2, 20, 34, 333.12345];
+	write js progrm to display all numbers inside array with the same length
+	10.2000000
+	20.0000000
+	34.0000000
+	333.123450
+-------------------------------
+4.4- discuss with your lab instructor the results of the following statements 
+	A- var t1=new Number(10); 
+	   var t2= new Number(10);
+	   console.log(t1==t2); // false identity by identity
+	--------------------
+	B- console.log([1,2,3]==[1,2,3]) // false identity by identity
+	--------------------
+	
+		 

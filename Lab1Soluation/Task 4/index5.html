@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Task 1.5.1</title>
+</head>
+
+<body>
+    <div id="locals">
+        <h1 id="id1"></h1>
+        <h1 id="id2"></h1>
+
+        <h1 id="id3"></h1>
+
+        <h1 id="id4"></h1>
+
+    </div>
+    <script>
+        var locals = ["ar-EG", "en-US", "fr-FR", "zh-CN"];
+        do {
+            var userdata = prompt("enter number");
+            if (userdata != null && userdata != '') {
+                userdata = parseInt(userdata);
+                for (var i = 0; i < locals.length; i++) {
+                    var ss = userdata.toLocaleString(locals[i]);
+                    document.getElementById("id" + (i + 1)).innerText += ss;
+                }
+            }
+            break;
+        } while (userdata == null || userdata == '');
+    </script>
+</body>
+
+</html>
