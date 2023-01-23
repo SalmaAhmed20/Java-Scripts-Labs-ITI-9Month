@@ -1,0 +1,31 @@
+<html>
+
+<head>
+    <title>Task2.2</title>
+</head>
+
+<body>
+    <script>
+        do {
+            var number = prompt("Enter Number");
+        } while (number == null || number == '');
+        do {
+            var initialRadix = prompt("Enter initial Radix start from 2 to 36");
+            var ini = parseInt(initialRadix);
+            if (ini < 2 || ini > 36) { initialRadix = null; }
+        } while (initialRadix == null || initialRadix == '');
+        do {
+            var TargetRadix = prompt("Enter TargetRedix start from 2 to 36");
+            var target = parseInt(TargetRadix);
+            if (target < 2 || target > 36) { TargetRadix = null; }
+        } while (TargetRadix == null || TargetRadix == '');
+
+        number = parseInt(number, initialRadix);
+        if (!isNaN(number)) {
+            number = number.toString(TargetRadix)
+            alert("Output " + number);
+        }
+    </script>
+</body>
+
+</html>

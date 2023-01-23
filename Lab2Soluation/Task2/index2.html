@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Task2.1</title>
+    </head>
+    <body>
+        <script>
+            var Name = "salma ahmed anees  mansour";
+            var splited= Name.split(" ");
+            var newName='';
+            for( var i = 0;i<splited.length;i++)
+            {
+                newName=newName.concat(" " ,splited[i].substring(0,1).toUpperCase(),splited[i].substring(1));
+            }
+            document.writeln(newName);
+        </script>
+    </body>
+</html>

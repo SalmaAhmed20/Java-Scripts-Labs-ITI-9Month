@@ -1,0 +1,14 @@
+.1 - write js code to convert a string into Pascal Case :
+	ex:
+		input: "ali mohamed"
+		output: "Ali Mohamed"
+
+	 ----------------------------------
+2- write js program which accept 3 inputs 
+	a- user number
+	b- first(initial) radix 
+	c- target radix  
+	ex: 1000 , initial radix : 2 , target radix : 8
+	test data : 1000,2,8;
+	output : "10"
+	----------------------
