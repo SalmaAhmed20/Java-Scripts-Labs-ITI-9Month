@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Task 3 </title>
+    <style>
+        .stylesport {
+            font: 20px;
+            color: green;
+        }
+
+        .stylesocial {
+            font: 20px;
+            color: blue;
+
+        }
+
+        .stylepolitical {
+            font: 20px;
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div style="font-size: 20px;">
+            <label for="Category"> News Type: </label>
+            <input type="radio" id="sport" name="Category" value="sport" required checked> Sport
+            <input type="radio" id="social" name="Category" value="social" required> Social
+            <input type="radio" id="politic" name="Category" value="politic" required> Politic
+            <br><br><br>
+            <label for="News">News Title:</label>
+            <input type="text" id="News" name="News" placeholder="Add Here">
+            <button type="button" onclick="addNews()">Add</button>
+            <br><br>
+            <label for="News">Search :</label>
+            <input type="text" id="search" name="News" onkeyup="Search()" placeholder="Search for news..">
+            <div>
+                <table id="NewsTable" cellpadding="20">
+                    <tr>
+                        <td> No.</td>
+                        <td> News</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </center>
+    <script>
+        var count = 0;
+        function addNews() {
+            var Category = document.querySelector('input[name="Category"]:checked').value;
+            var newsCheck = document.getElementById("News").value;
+            if (!newsCheck) {
+                alert("News Title is Empty ");
+            } else {
+                var table = document.getElementsByTagName("table")[0];
+                var row = table.insertRow(-1);
+                if (Category === 'sport')
+                    row.classList.add("stylesport");
+                if (Category === 'social')
+                    row.classList.add("stylesocial");
+                if (Category === 'politic')
+                    row.classList.add("stylepolitical");
+                var c1 = row.insertCell(0);
+                var c2 = row.insertCell(1);
+                c1.innerText = ++count;
+                c2.innerText = newsCheck;
+
+            }
+        }
+        function Search() {
+            input = document.getElementById("search");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("NewsTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().includes(filter)) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

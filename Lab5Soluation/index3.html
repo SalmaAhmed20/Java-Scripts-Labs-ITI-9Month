@@ -1,0 +1,183 @@
+<html>
+
+<head>
+    <title>Text Style
+    </title>
+    <style>
+        table {
+            border-collapse: collapse;
+            border: 2px ridge purple;
+            letter-spacing: 1px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 0.8rem;
+            text-align: justify;
+            /* text-transform: u; */
+            /* text-decoration: overline; */
+        }
+
+        td,
+        th {
+            border: 1px double rgb(190, 190, 190);
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <br><br>
+        <p id ="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Nisi ducimus libero ipsa earum, fugit odit, aspernatur nihil molestiae provident natus maiores esse, modi
+            doloremque? Alias, illum vel! Dicta, ut beatae.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore excepturi explicabo dolorem nobis
+            molestiae,
+            iste omnis ipsa eum consequuntur quo distinctio ipsum rerum commodi, facere quam accusamus tenetur
+            blanditiis ullam.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis culpa unde praesentium esse debitis
+            deleniti quod impedit,
+            facere, eligendi accusantium cum illo, distinctio porro amet reiciendis reprehenderit doloremque ab. Atque.
+        </p>
+        <br><br>
+    </div>
+    <div>
+        <form name="myForm" onchange="MakeStyle()">
+            <table>
+                <tr>
+                    <th>Font Family</th>
+                    <th>Text Align</th>
+                    <th>Line Height</th>
+                    <th>Letter Spaceing</th>
+                    <th>Text Indent</th>
+                    <th>Text Transformation</th>
+                    <th>Text Decoration</th>
+                    <th>Text Border</th>
+                    <th>Border Color</th>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value="Arial" checked>arial</td>
+                    <td><input type="radio" name="TextAlign" value="left" checked>left</td>
+                    <td><input type="radio" name="LineHeight" value="normal" checked>normal</td>
+                    <td><input type="radio" name="LetterSpaceing" value="normal" checked>normal</td>
+                    <td><input type="radio" name="TextIndent" value="0px" checked>0px</td>
+                    <td><input type="radio" name="TextTransformation" value="none" checked>none</td>
+                    <td><input type="radio" name="TextDecoration" value="none" checked>none</td>
+                    <td><input type="radio" name="TextBorder" value="none" checked>none</td>
+                    <td><input type="radio" name="BorderColor" value="none" checked>none</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value="Courier">Courier</td>
+                    <td><input type="radio" name="TextAlign" value="center">Center</td>
+                    <td><input type="radio" name="LineHeight" value="10px">10px</td>
+                    <td><input type="radio" name="LetterSpaceing" value="-1px">-1px</td>
+                    <td><input type="radio" name="TextIndent" value="5px">5px</td>
+                    <td><input type="radio" name="TextTransformation" value="capitalize">capitalize</td>
+                    <td><input type="radio" name="TextDecoration" value="line-through">line-through</td>
+                    <td><input type="radio" name="TextBorder" value="dotted">dotted</td>
+                    <td><input type="radio" name="BorderColor" value="pink">pink</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value="Georgia">Georgia</td>
+                    <td><input type="radio" name="TextAlign" value="right">Right</td>
+                    <td><input type="radio" name="LineHeight" value="15px">15px</td>
+                    <td><input type="radio" name="LetterSpaceing" value="2px">2px</td>
+                    <td><input type="radio" name="TextIndent" value="5px">5px</td>
+                    <td><input type="radio" name="TextTransformation" value="uppercase">uppercase</td>
+                    <td><input type="radio" name="TextDecoration" value="overline">overline</td>
+                    <td><input type="radio" name="TextBorder" value="double">double</td>
+                    <td><input type="radio" name="BorderColor" value="red">red</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value=" Impact">Impact</td>
+                    <td><input type="radio" name="TextAlign" value="justify">justify</td>
+                    <td><input type="radio" name="LineHeight" value="1.5">1.5</td>
+                    <td><input type="radio" name="LetterSpaceing" value="3px">3px</td>
+                    <td><input type="radio" name="TextIndent" value="25px">25px</td>
+                    <td><input type="radio" name="TextTransformation" value="lowercase">lowercase</td>
+                    <td><input type="radio" name="TextDecoration" value="underline">underline</td>
+                    <td><input type="radio" name="TextBorder" value="groove">groove</td>
+                    <td><input type="radio" name="BorderColor" value="green">green</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value=" Times">Times new Romain</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="TextBorder" value="dashed">dashed</td>
+                    <td><input type="radio" name="BorderColor" value="blue">blue</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="FontFamily" value=" Verdana">Verdana</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="TextBorder" value="inset">inset</td>
+                    <td><input type="radio" name="BorderColor" value="yellow">yellow</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="TextBorder" value="solid">solid</td>
+                    <td><input type="radio" name="BorderColor" value="purple">purple</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="TextBorder" value="outset">outset</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" name="TextBorder" value="ridge">ridge</td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        function MakeStyle() {
+            var FontFamily = document.querySelector('input[name="FontFamily"]:checked').value;
+            var TextAlign = document.querySelector('input[name="TextAlign"]:checked').value;
+            var LineHeight = document.querySelector('input[name="LineHeight"]:checked').value;
+            var LetterSpaceing = document.querySelector('input[name="LetterSpaceing"]:checked').value;
+            var TextIndent = document.querySelector('input[name="TextIndent"]:checked').value;
+            var TextTransformation = document.querySelector('input[name="TextTransformation"]:checked').value;
+            var TextDecoration = document.querySelector('input[name="TextDecoration"]:checked').value;
+            var TextBorder = document.querySelector('input[name="TextBorder"]:checked').value;
+            var BorderColor = document.querySelector('input[name="BorderColor"]:checked').value;
+            var paragraph = document.getElementById("paragraph");
+            paragraph.style.fontFamily=FontFamily;
+            paragraph.style.textAlign=TextAlign;
+            paragraph.style.lineHeight=LineHeight;
+            paragraph.style.letterSpacing=LetterSpaceing;
+            paragraph.style.textIndent=TextIndent;
+            paragraph.style.textTransform=TextTransformation;
+            paragraph.style.textDecoration=TextDecoration;
+            paragraph.style.border=TextBorder;
+            paragraph.style.borderColor=BorderColor;
+        }
+    </script>
+</body>
+
+</html>

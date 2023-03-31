@@ -1,0 +1,90 @@
+<html>
+
+<head>
+    <title>ToDoList</title>
+    <style>
+        h1 {
+            color: rgb(112, 41, 41);
+            font-size: 50px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: center;
+
+        }
+
+        #AdditionTask {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        input[type="text"] {
+            padding: 15px;
+            width: 45%;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 5px 5px 10px 2px gray;
+        }
+
+        #Add {
+            background-color: gray;
+            padding: 10px;
+            margin: 20px;
+            color: aliceblue;
+            font-size: 18px;
+            border: none;
+            width: 5%;
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: red;
+            color: aliceblue;
+            padding-left: 150px;
+            padding-right: 150px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            border-radius: 15px;
+            font-size: 20px;
+        }
+
+        td,
+        tr {
+            text-align: center;
+            align-content: center;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(220, 213, 213);
+        }
+
+        .btn {
+            background-color: transparents;
+            border: none;
+            color: red;
+            padding: 12px 16px;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .donetasks {
+            text-decoration: line-through;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="AdditionTask">
+        <h1>To Do Organizer</h1>
+        <input id="task" type="text" placeholder="Enter Task Name" required>
+        <button id="Add">Add</button>
+    </div>
+    <div id="ListofTask">
+        <table align="center" cellspaceing="50px" id="listTasks">
+            <th>Done</th>
+            <th>Task</th>
+            <th>Delete</th>
+        </table>
+    </div>
+</body>
+
+</html>

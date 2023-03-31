@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>Task1</title>
+</head>
+
+<body>
+    <script>
+        var notNumbers = false;
+        do {
+            // check fo not empty
+            do {
+                var InsertedArray = prompt("Enter Array Values");
+            } while (InsertedArray == null || InsertedArray == '')
+            // split and check all of data are numerics 
+            var arr = InsertedArray.split(",");
+            notNumbers = arr.some(function (a) { return isNaN(Number(a)) })
+            // construct Table
+            if (!notNumbers) {
+                document.write("<table id = 'table1' cellspacing='10' cellpadding='10' align='center' border='2' ><tr><th>Values</th></tr>");
+                arr.forEach(function (a) {
+                    document.write("<tr align='center'><td>" + a + "</td></tr>");
+                });
+                document.write("</table>");
+                for (var i = 0; i < arr.length; i++) {
+                    arr[i] = Number(arr[i]);
+                }
+                // Check for Duplication
+                var table = document.getElementById("table1");
+                for (var i = 0; i < arr.length; i++) {
+                    for (var j = i + 1; j < arr.length; j++) {
+                        console.log("arr[i]=" + arr[i] + "arr[j]=" + arr[j]);
+                        if (arr[i] === arr[j]) {
+                            document.write("<h2 align='center'> repeated Row Number  " + (i + 1) + " and Row Number " + (j + 1) + "</h1>");
+                            table.style.borderColor = "red";
+                        }
+                    }
+                }
+            }
+            else alert("Array Contain non Numeric Values");
+        } while (notNumbers);
+    </script>
+</body>
+
+</html>

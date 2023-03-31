@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Task 2</title>
+</head>
+
+<body>
+    <h1 id="H1"></h1>
+    <script>
+        var Colorarr = ["red", "green", "blue", "yellow", "cyan"];
+        var count = 10;
+        function Coloring() {
+            document.body.style.backgroundColor = Colorarr[getRndInteger(0, Colorarr.length - 1)];
+            count--;
+            if (count <= 0) {
+                close();
+            }
+
+            H1.innerText = ("Your document is closing in < " + count + " >")
+        }
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+        setInterval(Coloring, 1200);
+
+    </script>
+</body>
+
+</html>

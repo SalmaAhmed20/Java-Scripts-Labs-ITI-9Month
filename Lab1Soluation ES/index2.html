@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Task 2</title>
+</head>
+
+<body>
+    <script>
+        function Arithmatic(op, ...integers) {
+            switch (op) {
+                case "+": {
+                    let result = 0;
+                    integers.forEach((a) => result += a);
+                    console.log(`Result of sum operation for ${integers} is ${result}`);
+                    break;
+                }
+                case "*": {
+                    let result = 1;
+                    integers.forEach((a) => result *= a);
+                    console.log(`Result of Multiplication operation for ${integers} is ${result}`);
+                    break;
+                }
+                case "/": {
+                    let result = integers[0];
+                    for (let index = 1; index < integers.length; index++) {
+                        result /= integers[i];
+                    }
+                    console.log(`Result of division operation for ${integers} is ${result}`);
+                    break;
+                }
+                default:
+                    console.log(`Not Supported`);
+
+            }
+        }
+        Arithmatic("+", 3,1,6,3);
+    </script>
+</body>
+
+</html>

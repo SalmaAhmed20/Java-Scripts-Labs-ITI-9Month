@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title> Task 5</title>
+</head>
+
+<body>
+    <h1 id="input"> input : </h1>
+    <h1 id="output"> output :</h1>
+
+    <script>
+        do {
+            do {
+                var Size = prompt("Enter Number People will Play");
+            } while (!Size)
+            if (isNaN(Number(Size))) {
+                alert("Number People");
+            }
+        } while (isNaN(Number(Size)));
+        Size = Number(Size);
+        var names = [];
+        for (var i = 0; i < Size; i++) {
+            var person = prompt("Enter Person Name # " + (i + 1) + ": ");
+            if (!person) { alert("Empty name not Allowed"); i--; continue; }
+            else names.push(person);
+        }
+        function Choose() {
+            var indexes = [];
+            indexes.push(getRndInteger(0, names.length - 1));
+            do {
+                index2 = getRndInteger(0, names.length - 1);
+                if (indexes[0] == index2) {
+                    index2 = getRndInteger(0, names.length - 1);
+                }
+            } while (indexes[0] == index2);
+            indexes.push(index2);
+            document.getElementById("input").innerText += "[ ";
+            var i = 0;
+            names.forEach(element => {
+                if (i == 0) document.getElementById("input").innerText += element;
+                else document.getElementById("input").innerText += ", " + element;
+                i++;
+            });
+            document.getElementById("input").innerText += "]";
+            document.getElementById("output").innerText += "[ " + names[indexes[0]] + " , " + names[indexes[1]] + " ]";
+        }
+        Choose();
+        function getRndInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+    </script>
+</body>
+
+</html>

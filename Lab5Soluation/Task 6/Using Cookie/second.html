@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <title>Second</title>
+    
+</head>
+
+<body>
+    <div style="display: inline-block; ">
+        <img id = "img1" src="" alt="" width="150px" height="150px">
+    </div>
+    <div style="display: inline-block;">
+        <h1> welcome <p id="demo1" style="display: inline; font-size: larger;"></p>
+        </h1>
+    </div>
+    <script>
+        console.log(document.cookie)
+        document.getElementById("img1").src = document.cookie.split(";")[1].split("=")[1];
+        var name = document.cookie.split(";")[2].split("=")[1];
+        var color = document.cookie.split(";")[0].split("=")[1]
+        var result = name.fontcolor(color);
+        document.getElementById("demo1").innerHTML = result;
+    </script>
+</body>
+
+</html>

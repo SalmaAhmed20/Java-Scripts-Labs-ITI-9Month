@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <title>Second</title>
+    
+</head>
+
+<body>
+    <div style="display: inline-block; ">
+        <img id = "img1" src="" alt="" width="150px" height="150px">
+    </div>
+    <div style="display: inline-block;">
+        <h1> welcome <p id="demo1" style="display: inline; font-size: larger;"></p>
+        </h1>
+    </div>
+    <script>
+        //http://127.0.0.1:5500/second.html?Namefield=salma&agefield=4&gender=female.png&colors=Green
+        var QueryString = location.href.substring(location.href.indexOf("?") + 1).split("&");
+        var name = QueryString[0].split("=")[1];
+        var age = QueryString[1].split("=")[1];
+        var gender = QueryString[2].split("=")[1];
+        var favColor = QueryString[3].split("=")[1];
+        document.getElementById("img1").src = gender;
+        var result = name.fontcolor(favColor.toLowerCase());
+        document.getElementById("demo1").innerHTML = result;
+    </script>
+</body>
+
+</html>

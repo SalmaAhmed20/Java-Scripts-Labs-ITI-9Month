@@ -1,0 +1,125 @@
+<html>
+
+<head>
+    <title> Form Validation</title>
+    <style>
+        #divform {
+            padding: 30px;
+            border: 2px solid black;
+            align-content: center;
+            width: fit-content;
+            position: relative;
+            align-self: center;
+            margin: auto;
+        }
+
+        .error {
+            color: red;
+            font-size: large;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="divform">
+        <form id="myForm">
+            <label for="nameField"> Name: </label>
+            <input type="text" name="nameField" placeholder="Enter your full name" onblur="CheckText()"
+                onkeyup="removeErr()">
+            <span id="errormsg" class="error"></span>
+            <br><br>
+            <label for="Country"> Country: </label>
+            <select onchange="specifyZipCode()" name="Country">
+                <option value="111"> Egypt </option>
+                <option value="122"> USA </option>
+                <option value="132"> Canda </option>
+                <option value="232">UAE</option>
+            </select>
+            <br><br>
+            <label for="ZipField"> Zip: </label>
+            <input type="Zip" name="ZipField" disabled>
+            <br><br>
+            <label for="emailField"> Email: </label>
+            <input type="email" name="emailField" id="myEmail" onkeyup="Checkemail()">
+            <span id="errormsg2" class="error"></span>
+            <br><br>
+            <span> Hoppies: </span>
+            <input type="checkbox" name="HoppiesField" id="Hoppies1">Writing
+            <input type="checkbox" name="HoppiesField" id="Hoppies2"> Reading
+            <input type="checkbox" name="HoppiesField" id="Hoppies3">Swimming
+            <input type="checkbox" name="HoppiesField" id="Hoppies4">Sleeping
+            <span id="errormsg3" class="error"></span>
+            <br><br>
+            <input type="submit" value="Register" onclick="Submit(event)">
+            <input type="reset" value="clear" onclick="return Clear();">
+        </form>
+    </div>
+</body>
+<script>
+    flagnameV = false;
+    fagMailv = false;
+    document.getElementsByTagName("form")[0].elements[0].focus();
+    errorSpan = document.getElementById("errormsg");
+    inputNameField = document.getElementsByTagName("form")[0].elements[0];
+    valueCountry = document.getElementsByName("Country")[0].value;
+    document.getElementsByName("ZipField")[0].value = valueCountry;
+    function CheckText() {
+        valueName = inputNameField.value;
+        if (!valueName) {
+            errorSpan.innerText = "Name Field is required";
+            inputNameField.focus();
+            flagnameV = false;
+        }
+        else {
+            errorSpan.innerText = "";
+            flagnameV = true;
+        }
+    }
+    function removeErr() {
+        errorSpan.innerText = "";
+        flagnameV = true;
+    }
+    function specifyZipCode() {
+        valueCountry = document.getElementsByName("Country")[0].value;
+        document.getElementsByName("ZipField")[0].value = valueCountry;
+    }
+    function Checkemail() {
+        emailAddr = document.getElementById("myEmail");
+        errorSpan2 = document.getElementById("errormsg2");
+        if (!((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(emailAddr.value))) {
+            errorSpan2.innerText = "Not Valid Email";
+            flagMailV = false;
+        }
+        else {
+            errorSpan2.innerText = "";
+            flagMailV = true;
+        }
+    }
+    function Submit(e) {
+        var elem, i;
+        var numberofChecked = 0;
+        for (i = 1; i <= 4; i++) {
+            elem = document.getElementById("Hoppies" + i)
+            if (elem.checked) {
+                numberofChecked++;
+            }
+        }
+        if (numberofChecked > 0 && flagMailV && flagnameV) {
+            document.getElementById("myForm").action = "./actionpage.html"
+            console.log("entered")
+
+        } else {
+            errorSpan3 = document.getElementById("errormsg3");
+            errorSpan3.innerText = "Please Choice hoppy";
+            e.preventDefault();
+        }
+    }
+    function Clear() {
+        var con = confirm("Are You sure to clear form?");
+        return con;
+    }
+
+</script>
+
+</html>

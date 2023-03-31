@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Task 3</title>
+    <style>
+        #mainwrapper {
+            width: 800px;
+            padding: 10px;
+
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        img {
+            width: 400px;
+            height: 400px;
+            margin: 10px;
+        }
+
+        #btnwrapper {
+            width: 600px;
+            margin: 10px auto;
+        }
+
+        input {
+            border: 0;
+            width: 100px;
+            padding: 10px;
+            font: bold 15px verdana;
+        }
+
+        img {
+            border: 5px solid yellow;
+        }
+
+        #arrows {
+            border: 0;
+            background-color: yellow;
+        }
+
+        input:focus {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="mainwrapper">
+        <div id="Header" style="align-content: center; margin-bottom: 5px ;">
+            <h1 id="h1"
+                style="display: inline; border: 4px solid yellow; border-right: 0; color: rgb(82, 82, 255); padding: 5px;">
+                Slide Show </h1>
+            <h1 id="h12" style="  padding: 5px; border: 4px solid yellow; border-left: 0; display: inline;">Game </h1>
+        </div>
+        <img src="UP/1.jpeg" id="myimg" />
+        <div id="btnwrapper">
+            <input id="arrows" type="button" value="<" onclick="prevfun();" />
+            <input id="playBtn" type="button" value="Play" onclick="startfun();" />
+            <input id="stopBtn" type="button" value="Stop" onclick="stopfun();" />
+            <input id="arrows" type="button" value=">" onclick="nextfun();" />
+        </div>
+    </div>
+
+
+
+    <script>
+        var isPlayed = false;
+        stopBtn.disable = true;
+        document.getElementById("stopBtn").style.backgroundColor = "gray";
+        document.getElementById("playBtn").style.backgroundColor = "green";
+        var imagearr = ["UP/1.jpeg", "UP/2.jpg", "UP/3.jpg", "UP/4.jpg", "UP/5.jpg"];
+        var index = 0;
+        function startfun() {
+            if (!isPlayed) {
+                playBtn.disable = true;
+                document.getElementById("playBtn").style.backgroundColor = "gray";
+                stopBtn.disable = false;
+                document.getElementById("stopBtn").style.backgroundColor = "red";
+                t = setInterval("nextfun()", 2000);
+                isPlayed = true;
+            }
+
+        }
+        function nextfun() {
+            index++;
+            if (index >= imagearr.length) index = 0;
+            myimg.src = imagearr[index];
+        }
+        function prevfun() {
+            index--;
+            if (index < 0) index = imagearr.length - 1;
+            myimg.src = imagearr[index];
+        }
+        function stopfun() {
+            if (isPlayed) {
+                playBtn.disable = false;
+                document.getElementById("playBtn").style.backgroundColor = "green";
+                clearInterval(t);
+                stopBtn.disable = true;
+                document.getElementById("stopBtn").style.backgroundColor = "gray";
+                isPlayed = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

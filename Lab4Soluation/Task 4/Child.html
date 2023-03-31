@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title> Child Task 1</title>
+    </style>
+</head>
+
+<body>
+    <div>
+        <p id="TypingMessage"> </p>
+    </div>
+    <script>
+        var charcters = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, voluptates! Dolores quas non illo quasi labore, laboriosam eligendi, atque excepturi pariatur tempore fugiat quo itaque id? Odit voluptatum esse rem?"
+        t = setInterval(' WriteIt()', 200);
+        var index = 0
+        document.getElementById("TypingMessage").innerText = '';
+        function WriteIt() {
+            if (index < charcters.length) {
+                if (charcters[index] === ' ') {
+                    document.getElementById("TypingMessage").innerText += " " + charcters[index + 1];
+                    index++;
+                }
+                else { document.getElementById("TypingMessage").innerText += charcters[index] };
+                index++;
+            } else {
+                index = 0;
+                document.getElementById("TypingMessage").innerText = '';
+            }
+        }
+        //clearInterval(t);
+    </script>
+
+</body>
+
+</html>

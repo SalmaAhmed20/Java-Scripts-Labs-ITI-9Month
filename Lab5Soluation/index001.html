@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>Task 1</title>
+</head>
+
+<body>
+    <label for="News">News Title:</label>
+    <input type="text" id="News" name="News">
+    <button type="button" onclick="addNews()">Add</button>
+    <div>
+        <table id="NewsTable" cellpadding="20">
+            <tr>
+                <td> No.</td>
+                <td> News</td>
+            </tr>
+        </table>
+    </div>
+    <button type="button" onclick="CountNews()">Count Rows</button>
+    <h3></h3>
+    <script>
+        var count = 0;
+        function addNews() {
+            var newsCheck = document.getElementById("News").value;
+            if (!newsCheck) {
+                alert("News Title is Empty ");
+            } else {
+                var table = document.getElementsByTagName("table")[0];
+                var row = table.insertRow(-1);
+                var c1 = row.insertCell(0);
+                var c2 = row.insertCell(1);
+                c1.innerText = ++count;
+                c2.innerText = newsCheck;
+            }
+        }
+        function CountNews() {
+            document.getElementsByTagName("h3")[0].innerText = "Number of Rows " + count;
+        }
+    </script>
+</body>
+
+</html>
